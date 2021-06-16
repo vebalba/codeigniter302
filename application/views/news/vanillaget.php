@@ -5,9 +5,11 @@
     <body>
         <script>
                 const request = new XMLHttpRequest();
-                const url = 'http://localhost/codeigniter/index.php/newsapi';
+                const url = 'https://codeigniter30.herokuapp.com/index.php/newsapi/';
                 request.open("GET", url);
                 request.send();
+
+  
                 request.onload = (e) => {
                     alert(request.response);
                 }
