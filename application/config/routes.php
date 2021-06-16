@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -50,5 +49,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'news';
-$route['news/(:any)'] = 'news/view/$1';
-$route['news'] = 'news';
+//$route['news/(:any)'] = 'news/view/$1';
+//$route['news'] = 'news';

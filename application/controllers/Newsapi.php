@@ -37,4 +37,4 @@ class Newsapi extends RestController {
         $this->db->delete('news', array('id'=>$id));
         $this->response(['Item deleted successfully.'],200);
     }
-}
+} 
