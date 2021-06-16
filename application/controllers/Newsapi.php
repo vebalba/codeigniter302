@@ -2,12 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 use chriskacerguis\RestServer\RestController;
 class Newsapi extends RestController {
+	
     function __construct()
+	
     {
         // Construct the parent class
         parent::__construct();
 		$this->load->database();
     }
+	
 	public function index_get($id = 0)
 	{
         if(!empty($id)){
@@ -17,18 +20,23 @@ class Newsapi extends RestController {
         }
         $this->response($data, 200);
 	}
-
     public function index_post()
     {
-            $input = $this->input->post();
-            $this->db->insert('news',$input);
-            $this->response(['News created successfully.'],200);
+        $input = $this->input->post();
+        $this->db->insert('news',$input);
+        $this->response(['News created successfully.'],200);
     } 
 
-    public function index_put($id)
+	public function index_put($id)
     {
-            $input = $this->put();
-            $this->db->update('news', $input, array('id'=>$id));
-            $this->response(['News updated successfully.'],200);
+        $input = $this->put();
+        $this->db->update('news', $input, array('id'=>$id));
+        $this->response(['News updated successfully.'],200);
+    }
+
+	public function index_delete($id)
+    {
+        $this->db->delete('news', array('id'=>$id));
+        $this->response(['Item deleted successfully.'], REST_Controller::HTTP_OK);
     }
 }
