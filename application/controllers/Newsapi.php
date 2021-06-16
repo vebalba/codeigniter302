@@ -1,7 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 use chriskacerguis\RestServer\RestController;
+
 class Newsapi extends RestController {
+
     function __construct()
     {
         // Construct the parent class
@@ -17,6 +20,7 @@ class Newsapi extends RestController {
             $data = $this->db->get('news')->result();
         }
         $this->response($data, 200);
+
 	}
     public function index_post()
     {
@@ -37,4 +41,4 @@ class Newsapi extends RestController {
         $this->db->delete('news', array('id'=>$id));
         $this->response(['Item deleted successfully.'],200);
     }
-} 
+}
