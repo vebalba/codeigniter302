@@ -9,6 +9,7 @@
                 request.open("GET", url);
                 request.send();
 
+
   
                 request.onload = (e) => {
                     alert(request.response);
